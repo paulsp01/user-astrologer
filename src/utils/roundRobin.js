@@ -1,8 +1,13 @@
-let currentAstrologerIndex = 0;
+// src/utils/roundRobin.js
+let currentIndex = 0;
 
 function roundRobin(astrologers) {
-  const astrologer = astrologers[currentAstrologerIndex];
-  currentAstrologerIndex = (currentAstrologerIndex + 1) % astrologers.length;
+  if (!astrologers || astrologers.length === 0) {
+    throw new Error("No astrologers available");
+  }
+
+  const astrologer = astrologers[currentIndex];
+  currentIndex = (currentIndex + 1) % astrologers.length;
   return astrologer._id;
 }
 

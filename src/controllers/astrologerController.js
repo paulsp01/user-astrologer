@@ -1,4 +1,4 @@
-const Astrologer=require('../models/astrologer');
+const Astrologer=require('../models/Astrologer');
 const {adjustFlowWeight}=require('../services/flowdistributionservice');
 
 
@@ -14,5 +14,10 @@ async function adjustFlowWeightHandler(req,res){
     }
 }
 
-module.exports={adjustFlowWeightHandler};
+async function createAstrologer(req,res){
+    const createAstrologer=await Astrologer.create(req.body);
+    res.status(200).json({message:'astrologer created'});
+}
+
+module.exports = { adjustFlowWeightHandler, createAstrologer };
 

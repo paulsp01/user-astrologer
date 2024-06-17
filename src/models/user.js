@@ -8,9 +8,9 @@ const userSchema=new mongoose.Schema({
     },
     astrologerId:{
         type: mongoose.Schema.Types.ObjectId,
-         ref: 'astrologer' ,
+         ref: 'Astrologer' ,
 
     },
 });
 
-module.exports = mongoose.model("user", userSchema);
+module.exports = mongoose.model("User", userSchema);

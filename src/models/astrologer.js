@@ -13,4 +13,4 @@ const astrologerSchema=new mongoose.Schema({
     },
 });
 
-module.exports=mongoose.model('astrologer',astrologerSchema);
+module.exports=mongoose.model('Astrologer',astrologerSchema);

@@ -1,13 +1,13 @@
 const roundRobin = require("../utils/roundRobin");
-const Astrologer = require("../models/astrologer");
+const Astrologer = require("../models/Astrologer");
 
 async function initializeAstrologers() {
-  const astrologers = await Astrologer.find();
+  const astrologers = await Astrologer.find({});
   return astrologers;
 }
 
 async function assignAstrologer(userId) {
-  const astrologers = await Astrologer.find();
+  const astrologers = await Astrologer.find({});
   const astrologerId = roundRobin(astrologers);
   return { userId, astrologerId };
 }
